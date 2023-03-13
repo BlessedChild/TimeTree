@@ -8,6 +8,10 @@
 * [开发工具链esp-idf-v5.0.1](https://github.com/espressif/esp-idf/releases/tag/v5.0.1)
 * [蓝牙扫描工具chrome://bluetooth-internals/#devices](chrome://bluetooth-internals/#devices)
 
+# 项目背景
+
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/项目背景.png)
+
 # 环境部署
 
 1. 安装CH340开发板串口驱动，从开发板厂家官网下载：[开发板驱动（USB转串口）](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html)
@@ -55,6 +59,9 @@ cp -r $IDF_PATH/examples/get-started/hello_world .
 ls /dev/cu.*
 ```
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/查询开发板名称.png)
+此时的设备名称：
+/dev/cu.usbserial-1450
+/dev/cu.wchusbserial1450
 
 11. 配置OTA工程，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id13)，进入 hello_world 目录，设置 ESP32-C3 为目标芯片，然后运行工程配置工具 menuconfig
 ``` shell
@@ -75,3 +82,18 @@ OTA编译中...
 OTA编译完成
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA编译完成.png)
 
+13. OTA烧录到设备，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id15)，将刚刚生成的二进制文件 (bootloader.bin、partition-table.bin 和 hello_world.bin) 烧录至 ESP32-C3 开发板：
+``` shell
+idf.py -p /dev/cu.wchusbserial1450 flash
+```
+烧录过程
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA烧录到设备过程.png)
+烧录完成
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA烧录到设备.png)
+
+14. 重启开发板，监视开发板输出，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id15)，使用 idf.py -p PORT monitor 命令，监视 “hello_world” 工程的运行情况。注意，不要忘记将 PORT 替换为您的串口名称：
+``` shell
+idf.py -p /dev/cu.usbserial-1450 monitor
+```
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA监控开发板输出.png)
+使用快捷键 Ctrl+]，退出 IDF 监视器
