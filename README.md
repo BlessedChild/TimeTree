@@ -86,14 +86,17 @@ OTA编译完成
 ``` shell
 idf.py -p /dev/cu.wchusbserial1450 flash
 ```
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA烧录到设备.png)
 烧录过程
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA烧录到设备过程.png)
 烧录完成
-![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA烧录到设备.png)
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA烧录到设备完成.png)
 
 14. 重启开发板，监视开发板输出，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id15)，使用 idf.py -p PORT monitor 命令，监视 “hello_world” 工程的运行情况。注意，不要忘记将 PORT 替换为您的串口名称：
 ``` shell
 idf.py -p /dev/cu.usbserial-1450 monitor
 ```
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA监控开发板输出.png)
+这里会看到warn提示，只要根据第11步设置好Flash Size为4MB即可
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA监控开发板输出.png)
 使用快捷键 Ctrl+]，退出 IDF 监视器
