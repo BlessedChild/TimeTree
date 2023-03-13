@@ -53,10 +53,10 @@ idf.py -p /dev/cu.usbserial-1410 flash monitor
 5. 发现Mac上电脑蓝牙还是没有发现开发板的名字，仔细思考了一下逻辑，推测可能是ble5.0低功耗不能被Mac、iPhone直接识别或者是开发板的蓝牙设置有一些需要调整（可以通过idf.py menuconfig进入菜单设置，其对应文件中的sdkconfig文件），临时的一个办法可以打开chrome浏览器，输入chrome://bluetooth-internals/#devices进行搜索
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/bluetooth-internals.png)
 然后点击右上方“start scan”，在列表中找到了开发板信息了（ESP_GATTS_DEMO）
-![avatar](https://github.com/BlessedChild/TimeTree/tree/main/sources/ble_gatt_server/bluetooth-scan.png)
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/bluetooth-scan.png)
 后续：经过一番查询和学习，基本可以确定Mac和iPhone无法在OS蓝牙中心发现开发板的原因了，根据厂家文档的[解释](https://docs.espressif.com/projects/espressif-esp-faq/zh_CN/latest/software-framework/ble-bt.html#bluetooth-le)
 ![avatar](https://github.com/BlessedChild/TimeTree/tree/main/sources/ble_gatt_server/macos-ble.png)
-![avatar](https://github.com/BlessedChild/TimeTree/tree/main/sources/ble_gatt_server/macos-ble2.png)
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/macos-ble2.png)
 ![avatar](https://github.com/BlessedChild/TimeTree/tree/main/sources/ble_gatt_server/macos-ble3.png)
 
 # 结论&补充
