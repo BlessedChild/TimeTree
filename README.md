@@ -84,9 +84,8 @@ OTA编译完成
 
 13. OTA烧录到设备，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id15)，将刚刚生成的二进制文件 (bootloader.bin、partition-table.bin 和 hello_world.bin) 烧录至 ESP32-C3 开发板：
 ``` shell
-idf.py -p /dev/cu.wchusbserial1450 flash
+idf.py -p /dev/cu.usbserial1450 flash
 ```
-![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA烧录到设备.png)
 烧录过程
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA烧录到设备过程.png)
 烧录完成
