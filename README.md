@@ -46,6 +46,7 @@ cp -r $IDF_PATH/examples/get-started/hello_world .
 ls /dev/cu.*
 ```
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/查询开发板名称.png)
+
 11. 配置OTA工程，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id13)，进入 hello_world 目录，设置 ESP32-C3 为目标芯片，然后运行工程配置工具 menuconfig
 ``` shell
 cd ~/esp/hello_world
