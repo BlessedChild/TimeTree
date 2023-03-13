@@ -1,48 +1,49 @@
-# 开发环境
+# Development environment
 
-* 开发板：blue、wifi模块（乐鑫ESP-C3）、开发版（CPU、USB、RGB、一些最基础的元件）、可靠的可传输数据线。
+* Dev Board：blue、wifi（ESP32-C3）、board（CPU、USB、RGB、some basic meta electric unit）、data line
 * MacOS：13.2 (22D49)
-* [开发板驱动（USB转串口）](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html)
-* [开发工具链esp-idf-v5.0.1](https://github.com/espressif/esp-idf/releases/tag/v5.0.1)
-* [蓝牙扫描工具chrome://bluetooth-internals/#devices](chrome://bluetooth-internals/#devices)
+* [Driver for the dev board（USB to serial port）](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html)
+* [Document for thr OTA‘s dev（esp-idf-v5.0.1）](https://docs.espressif.com/projects/esp-idf/en/v5.0.1/esp32c3/get-started/linux-macos-setup.html#standard-toolchain-setup-for-linux-and-macos)
+* [Package:Tool‘s chains for the OTA‘s dev（esp-idf-v5.0.1）](https://github.com/espressif/esp-idf/releases/tag/v5.0.1)
+* [bluetooth scan tool（chrome://bluetooth-internals/#devices）](chrome://bluetooth-internals/#devices)
 
-# 项目背景
+# Background of the project
 
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/项目背景.png)
 
-# 实施
+# executive plan
 
-1. 编写OTA(蓝牙固件)
-从厂家仓库中拉取示例来熟悉一下：
+1. Programing OTA (Bluetooth firmware)
+Pull examples from the manufacturer's warehouse to get familiar with them:
 https://github.com/espressif/esp-idf/tree/v5.0.1/examples
-这里通过一些查询和学习，可以这么理解蓝牙的设计，蓝牙分为主（Client）从（Service）模式，可以跟类比于一般互联网应用的CS模式，即Server提供Service服务。
-我的预期是让电脑可以通过蓝牙连接开发版，那么开发板作为提供服务的一方，上面跑的即是Server提供服务（Service）。
+Through some inquiry and study, we can understand the design of Bluetooth - that is divided into Client and Service mode, which can be compared with CS mode of general Internet application, in other words, Server provides Service. My expectation is that the computer can connect to the development board through Bluetooth, so the development board as a Service provider runs on the Server to provide service.
 
-接下来，我将在厂家仓库中拉取Service的示例：
+Next, I will pull an example of Service from the manufacturer's warehouse:
 https://github.com/espressif/esp-idf/tree/v5.0.1/examples/bluetooth/bluedroid/ble/gatt_server
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/%E7%A4%BA%E4%BE%8B.png)
 
-2. 确定好示例后，来创建工程，在命令行中输入：
+2. After determining the example, create a project and enter it at the command line:
 ``` shell
 cd ~/esp
 cp -r ~/esp/esp-idf/examples/bluetooth/bluedroid/ble/gatt_server .
 ```
-如何查看开发板在蓝牙中心被搜索到的名字？查看.c文件，可以看到
+How to check the name of the development board searched in the Bluetooth center? Looking at the .c file, you can see that:
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/c%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84.png)
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/c%E6%96%87%E4%BB%B6.png)
+The name of the development board in the. c code is "ESP_GATTS_DEMO"
 
-3. 查询开发板名称，把开发板接到电脑上
+3. Check the name of the development board and connect it to the computer:
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/%E8%BF%9E%E6%8E%A5%E5%BC%80%E5%8F%91%E6%9D%BF.png)
-命令行输入：
+Command line input:
 ``` shell
 ls /dev/cu.*
 ```
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/%E6%9F%A5%E8%AF%A2%E5%BC%80%E5%8F%91%E6%9D%BF%E5%90%8D%E7%A7%B0.png)
-此时的开发板名称（命令行中）：
+Name of development board at this time (in the command line):
 /dev/cu.usbserial-1450
 /dev/cu.wchusbserial1450
 
-4. 编译&烧录OTA，命令行输入：
+4. Compile & Flash OTA, command line input:
 ``` shell
 idf.py set-target esp32c3
 idf.py -p /dev/cu.usbserial-1410 flash monitor
@@ -50,20 +51,20 @@ idf.py -p /dev/cu.usbserial-1410 flash monitor
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/OTA%E7%BC%96%E8%AF%91%E4%B8%AD.png)
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/OTA%E7%BC%96%E8%AF%91%E5%AE%8C%E6%88%90.png)
 
-5. 发现Mac上电脑蓝牙还是没有发现开发板的名字，仔细思考了一下逻辑，推测可能是ble5.0低功耗不能被Mac、iPhone直接识别或者是开发板的蓝牙设置有一些需要调整（可以通过idf.py menuconfig进入菜单设置，其对应文件中的sdkconfig文件），临时的一个办法可以打开chrome浏览器，输入chrome://bluetooth-internals/#devices进行搜索
+5. I found the computer Bluetooth on Mac, but I still didn't find the name of the development board. After careful thinking about the logic, I speculated that ble5.0 could not be directly recognized by Mac and iPhone, or that the Bluetooth settings of the development board needed to be adjusted (you can enter the menu settings through idf.py menuconfig, which corresponds to the sdkconfig file in the file). A temporary way is to open the chrome browser and enter chrome://Bluetooth-Internals/# devices to search.
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/bluetooth-internals.png)
-然后点击右上方“start scan”，在列表中找到了开发板信息了（ESP_GATTS_DEMO）
+Then click "start scan" on the upper right, and the development board information is found in the list (ESP_GATTS_DEMO)：
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/bluetooth-scan.png)
-后续：经过一番查询和学习，基本可以确定Mac和iPhone无法在OS蓝牙中心发现开发板的原因了，根据厂家文档的[解释](https://docs.espressif.com/projects/espressif-esp-faq/zh_CN/latest/software-framework/ble-bt.html#bluetooth-le)
+Follow-up: After some inquiry and study, we can basically determine the reason why Mac and iPhone can't find the development board in the OS Bluetooth center, According to the manufacturer's documentation [explanation](https://docs.espressif.com/projects/espressif-esp-faq/zh_CN/latest/software-framework/ble-bt.html#bluetooth-le)
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/macos-ble.png)
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/macos-ble2.png)
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/macos-ble3.png)
-上图即“BLE”
+The above is the origin of the abbreviation "BLE"
 
-# 结论&补充
+# Conclusion & Supplement
 
-经过研究，我在本文中提出一种新的方案-chrome://bluetooth-internals/#devices
-该方案对比网上已公开的方案具有以下优势：
-1. 步骤更简洁：在PC上进行调试，只需安装Chrome浏览器并输入地址chrome://bluetooth-internals/#devices
-2. 拓展性更高：可通过Javascript直接编写调试程序
-3. 本质上使用Chrome也是安装app的方式，chrome底层提供的接口对OS蓝牙接口进行了封装，另外，在手机上安装微信app并通过一些BLE调试小程序（微信搜索“ble调试”）也可以实现同样的效果
+After research, I put forward a new scheme in this paper - chrome://bluetooth-internals/#devices
+This scheme has the following advantages compared with the scheme published on the Internet:
+1. The steps are simpler: to debug on a PC, just install a Chrome browser and enter the address chrome://Bluetooth-internal/# devices.
+2. More extensibility: debugging programs can be programming directly through Javascript.
+3. In essence, using chrome is also the way to install the app. The interface provided by Chrome encapsulates the Bluetooth interface of OS. In addition, installing WeChat app on the mobile phone and using some ble debugging applets/miniprograms (WeChat search "BLE debugging") can also achieve the same effect.
