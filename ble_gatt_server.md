@@ -55,9 +55,10 @@ idf.py -p /dev/cu.usbserial-1410 flash monitor
 然后点击右上方“start scan”，在列表中找到了开发板信息了（ESP_GATTS_DEMO）
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/bluetooth-scan.png)
 后续：经过一番查询和学习，基本可以确定Mac和iPhone无法在OS蓝牙中心发现开发板的原因了，根据厂家文档的[解释](https://docs.espressif.com/projects/espressif-esp-faq/zh_CN/latest/software-framework/ble-bt.html#bluetooth-le)
-![avatar](https://github.com/BlessedChild/TimeTree/tree/main/sources/ble_gatt_server/macos-ble.png)
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/macos-ble.png)
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/macos-ble2.png)
-![avatar](https://github.com/BlessedChild/TimeTree/tree/main/sources/ble_gatt_server/macos-ble3.png)
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/macos-ble3.png)
+上图即“BLE”
 
 # 结论&补充
 
