@@ -5,7 +5,8 @@
 * Dev Board：blue、wifi（ESP32-C3）、board（CPU、USB、RGB、some basic meta electric unit）、data line
 * MacOS：13.2 (22D49)
 * [Driver for the dev board（USB to serial port）](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html)
-* [Tool‘s chains for the OTA‘s dev（esp-idf-v5.0.1）](https://github.com/espressif/esp-idf/releases/tag/v5.0.1)
+* [Document for thr OTA‘s dev（esp-idf-v5.0.1）](https://docs.espressif.com/projects/esp-idf/en/v5.0.1/esp32c3/get-started/linux-macos-setup.html#standard-toolchain-setup-for-linux-and-macos)
+* [Package:Tool‘s chains for the OTA‘s dev（esp-idf-v5.0.1）](https://github.com/espressif/esp-idf/releases/tag/v5.0.1)
 * [bluetooth scan tool（chrome://bluetooth-internals/#devices）](chrome://bluetooth-internals/#devices)
 
 # Background of the project
