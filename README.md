@@ -33,69 +33,69 @@
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/开发工具链esp-idf-v5.0.1.png)
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/%E8%8E%B7%E5%8F%96ESP-IDF.png)
 
-7. 设置工具，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#get-started-set-up-tools)，除了 ESP-IDF 本身，您还需要为支持 ESP32-C3 的项目安装 ESP-IDF 使用的各种工具，比如编译器、调试器、Python 包等。输入：
+7. Set up the tools，[document](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#get-started-set-up-tools) provided by the chip manufacturer，Aside from the ESP-IDF, we also need to install the tools used by ESP-IDF, such as the compiler, debugger, Python packages, etc, for projects supporting ESP32-C3：
 ``` shell
 cd ~/esp/esp-idf
 ./install.sh esp32c3
 ```
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/设置工具.png)
 
-8. 设置环境变量，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#get-started-set-up-env)，刚刚安装的工具尚未添加至 PATH 环境变量，无法通过“命令窗口”使用这些工具。因此，必须设置一些环境变量。这可以通过 ESP-IDF 提供的另一个脚本进行设置，在需要运行 ESP-IDF 的终端窗口运行以下命令：
+8. Set up the environment variables，[document](https://docs.espressif.com/projects/esp-idf/en/v5.0.1/esp32c3/get-started/linux-macos-setup.html#step-4-set-up-the-environment-variables) provided by the chip manufacturer, The installed tools are not yet added to the PATH environment variable. To make the tools usable from the command line, some environment variables must be set. ESP-IDF provides another script which does that：
 ``` shell
 . $HOME/esp/esp-idf/export.sh
 ```
-注意，命令开始的 “.” 与路径之间应有一个空格！
+Note the space between the leading dot and the path!
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/设置环境变量.png)
 
-9. OTA烧录测试，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id11)，从 ESP-IDF 中 examples 目录下的 get-started/hello_world 工程开始。将 get-started/hello_world 工程复制至本地的 ~/esp 目录下：
+9. OTA burning test，[document](https://docs.espressif.com/projects/esp-idf/en/v5.0.1/esp32c3/get-started/linux-macos-setup.html#start-a-project) provided by the chip manufacturer, we can start with get-started/hello_world project from examples directory in ESP-IDF, copy the project get-started/hello_world to ~/esp directory：
 ``` shell
 cd ~/esp
 cp -r $IDF_PATH/examples/get-started/hello_world .
 ```
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA烧录测试.png)
 
-10. 查询开发板接口名字，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id12)，开发板连上mac，输入：
+10. Query the interface name of the dev board，[document](https://docs.espressif.com/projects/esp-idf/en/v5.0.1/esp32c3/get-started/establish-serial-connection.html) provided by the chip manufacturer, the dev board is connected to the mac, and the command line is input：
 ``` shell
 ls /dev/cu.*
 ```
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/查询开发板名称.png)
-此时的设备名称：
+The dev board name at this time：
 /dev/cu.usbserial-1450
 /dev/cu.wchusbserial1450
 
-11. 配置OTA工程，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id13)，进入 hello_world 目录，设置 ESP32-C3 为目标芯片，然后运行工程配置工具 menuconfig
+11. Configure OTA project, [document](https://docs.espressif.com/projects/esp-idf/en/v5.0.1/esp32c3/get-started/linux-macos-setup.html#configure-your-project) provided by the chip manufacturer, Navigate to your hello_world directory, set ESP32-C3 as the target, and run the project configuration utility menuconfig
 ``` shell
 cd ~/esp/hello_world
 idf.py set-target esp32c3
 idf.py menuconfig
 ```
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/menucongfig.png)
-设置一下Flash Size为4MB
+Set Flash Size to 4MB
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/menucongfig-4MB.png)
 
-12. 编译OTA工程，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id14)，运行以下命令可以编译应用程序和所有 ESP-IDF 组件，接着生成引导加载程序、分区表和应用程序二进制文件。
+12. Build&Compile OTA project, [document](https://docs.espressif.com/projects/esp-idf/en/v5.0.1/esp32c3/get-started/linux-macos-setup.html#build-the-project) provided by the chip manufacturer, Run command below will compile the application and all ESP-IDF components, then it will generate the bootloader, partition table, and application binaries
 ``` shell
 idf.py build
 ```
-OTA编译中...
+OTA Compiling...
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA编译中.png)
-OTA编译完成
+OTA Compiled!
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA编译完成.png)
 
-13. OTA烧录到设备，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id15)，将刚刚生成的二进制文件 (bootloader.bin、partition-table.bin 和 hello_world.bin) 烧录至 ESP32-C3 开发板：
+13. Flash OTA onto the device, [document](https://docs.espressif.com/projects/esp-idf/en/v5.0.1/esp32c3/get-started/linux-macos-setup.html#flash-onto-the-device) provided by the chip manufacturer, flash the binaries that you just built (bootloader.bin, partition-table.bin and hello_world.bin) onto your ESP32-C3 board by running:
 ``` shell
 idf.py -p /dev/cu.usbserial1450 flash
 ```
-烧录过程
+Flashing...
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA烧录到设备过程.png)
-烧录完成
+Flashed!
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA烧录到设备完成.png)
 
-14. 重启开发板，监视开发板输出，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id15)，使用 idf.py -p PORT monitor 命令，监视 “hello_world” 工程的运行情况。注意，不要忘记将 PORT 替换为您的串口名称：
+14. Restart the dev board, Monitor the Output, [document](https://docs.espressif.com/projects/esp-idf/en/v5.0.1/esp32c3/get-started/linux-macos-setup.html#monitor-the-output) provided by the chip manufacturer, To check if “hello_world” is indeed running, type idf.py -p PORT monitor (Do not forget to replace PORT with your serial port name):
 ``` shell
 idf.py -p /dev/cu.usbserial-1450 monitor
 ```
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA监控开发板输出.png)
-这里会看到warn提示，只要根据第11步设置好Flash Size为4MB即可
+You will see the warn prompt here. Just set the Flash Size to 4MB according to step 11.
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/OTA监控开发板输出.png)
-使用快捷键 Ctrl+]，退出 IDF 监视器
+To exit IDF monitor use the shortcut Ctrl+].
