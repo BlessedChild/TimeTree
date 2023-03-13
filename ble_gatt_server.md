@@ -20,7 +20,7 @@ https://github.com/espressif/esp-idf/tree/v5.0.1/examples
 
 接下来，我将在厂家仓库中拉取Service的示例：
 https://github.com/espressif/esp-idf/tree/v5.0.1/examples/bluetooth/bluedroid/ble/gatt_server
-![avatar](https://github.com/BlessedChild/TimeTree/tree/main/sources/ble_gatt_server/示例.png)
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ble_gatt_server/%E7%A4%BA%E4%BE%8B.png)
 
 2. 确定好示例后，来创建工程，在命令行中输入：
 ``` shell
