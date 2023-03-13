@@ -1,0 +1,13 @@
+# 开发环境
+
+* 开发板：blue、wifi模块（乐鑫ESP-C3）、开发版（CPU、USB、RGB、一些最基础的元件）、可靠的可传输数据线。
+* MacOS：13.2 (22D49)
+* [开发板驱动（USB转串口）](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html)
+* [开发工具链esp-idf-v5.0.1](https://github.com/espressif/esp-idf/releases/tag/v5.0.1)
+* [蓝牙扫描工具chrome://bluetooth-internals/#devices](chrome://bluetooth-internals/#devices)
+
+# 项目背景
+
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/项目背景.png)
+
+# 环境部署
