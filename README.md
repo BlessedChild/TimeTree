@@ -46,7 +46,7 @@ cp -r $IDF_PATH/examples/get-started/hello_world .
 ls /dev/cu.*
 ```
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/查询开发板名称.png)
-11. 配置OTA工程，考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id13)，进入 hello_world 目录，设置 ESP32-C3 为目标芯片，然后运行工程配置工具 menuconfig
+11. 配置OTA工程，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id13)，进入 hello_world 目录，设置 ESP32-C3 为目标芯片，然后运行工程配置工具 menuconfig
 ``` shell
 cd ~/esp/hello_world
 idf.py set-target esp32c3
@@ -55,7 +55,7 @@ idf.py menuconfig
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/menucongfig.png)
 设置一下Flash Size为4MB
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/menucongfig-4MB.png)
-12. 编译OTA工程，考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id14)，运行以下命令可以编译应用程序和所有 ESP-IDF 组件，接着生成引导加载程序、分区表和应用程序二进制文件。
+12. 编译OTA工程，参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html#id14)，运行以下命令可以编译应用程序和所有 ESP-IDF 组件，接着生成引导加载程序、分区表和应用程序二进制文件。
 ``` shell
 idf.py build
 ```
