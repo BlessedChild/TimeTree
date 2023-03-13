@@ -6,7 +6,7 @@
 * MacOS：13.2 (22D49)
 * [开发板驱动（USB转串口）](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html)
 * [开发工具链esp-idf-v5.0.1](https://github.com/espressif/esp-idf/releases/tag/v5.0.1)
-* [chrome蓝牙扫描](chrome://bluetooth-internals/#devices)
+* [蓝牙扫描工具chrome://bluetooth-internals/#devices](chrome://bluetooth-internals/#devices)
 
 # 环境部署
 
@@ -29,7 +29,7 @@ cd ~/esp/esp-idf
 ./install.sh esp32c3
 ```
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/设置工具.png)
-8. 设置环境变量，刚刚安装的工具尚未添加至 PATH 环境变量，无法通过“命令窗口”使用这些工具。因此，必须设置一些环境变量。这可以通过 ESP-IDF 提供的另一个脚本进行设置，在需要运行 ESP-IDF 的终端窗口运行以下命令：
+8. 参考芯片厂家提供的[文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.0.1/esp32c3/get-started/linux-macos-setup.html)，设置环境变量，刚刚安装的工具尚未添加至 PATH 环境变量，无法通过“命令窗口”使用这些工具。因此，必须设置一些环境变量。这可以通过 ESP-IDF 提供的另一个脚本进行设置，在需要运行 ESP-IDF 的终端窗口运行以下命令：
 ``` shell
 . $HOME/esp/esp-idf/export.sh
 ```
