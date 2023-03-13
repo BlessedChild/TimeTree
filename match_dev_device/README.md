@@ -1,6 +1,6 @@
-# 使用Chrome浏览器和开发板进行蓝牙配对测试
+# Bluetooth pairing test using Chrome browser and development board
 
-* 测试工具/代码：https://googlechrome.github.io/samples/web-bluetooth/device-info-async-await.html?service=internet_protocol_support&allDevices=true
+* Test tool/code：https://googlechrome.github.io/samples/web-bluetooth/device-info-async-await.html?service=internet_protocol_support&allDevices=true
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/match_dev_device/%E7%A4%BA%E4%BE%8B.png)
 
 # Web Bluetooth / Device Info (Async Await) Sample
