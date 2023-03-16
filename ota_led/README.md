@@ -23,6 +23,8 @@ Connect the GPIO to an oscilloscope to see the generated signal:
 | Channel 1  | GPIO4 |
 | Channel 2  | GPIO5 |
 
+![Hardware Schematic](/sources/ota_led/hardware_schematic.jpg)
+
 ### Configure the project
 
 The example uses fixed PWM frequency of 5 kHz, duty cycle in 50%, and output GPIO pin. To change them, adjust `LEDC_FREQUENCY`, `LEDC_DUTY`, `LEDC_OUTPUT_IO` macros at the top of ledc_basic_example_main.c.
