@@ -68,7 +68,7 @@ See the Getting Started Guide for full steps to configure and use ESP-IDF to bui
 
 Running this example, you will see the PWM signal with a duty cycle of 50%.
 
-![PWM](image/ledc_pwm_signal.png)
+![PWM](sources/ota_led/output_examples.jpg)
 
 ## Troubleshooting
 
