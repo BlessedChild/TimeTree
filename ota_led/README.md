@@ -23,7 +23,7 @@ Connect the GPIO to an oscilloscope to see the generated signal:
 | Channel 1  | GPIO4 |
 | Channel 2  | GPIO5 |
 
-![Hardware Schematic](/sources/ota_led/hardware_schematic.jpg)
+![Hardware Schematic](/sources/ota_led_basic/hardware_schematic.jpg)
 
 ### Configure the project
 
