@@ -1,3 +1,7 @@
+# Introduction
+
+This is a solution for communicating with Bluetooth/WIFI components through a web interface
+
 # Development environment
 
 * Dev Board：blue、wifi（ESP32-C3）、board（CPU、USB、RGB、some basic meta electric unit）、data line
