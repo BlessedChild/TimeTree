@@ -1,5 +1,3 @@
-# TimeTree
-
 # Development environment
 
 * Dev Board：blue、wifi（ESP32-C3）、board（CPU、USB、RGB、some basic meta electric unit）、data line
