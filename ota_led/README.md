@@ -70,7 +70,7 @@ See the Getting Started Guide for full steps to configure and use ESP-IDF to bui
 
 Running this example, you will see the LED/RGB signal with a duty cycle of 50%.
 
-![PWM](/sources/ota_led/output_examples.jpg)
+![PWM](/sources/ota_led_basic/output_examples.jpg)
 
 ## Troubleshooting
 
