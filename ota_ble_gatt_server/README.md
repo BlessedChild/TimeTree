@@ -73,7 +73,7 @@ Finally, we can see the mac connect to the dev board, respone informations to ma
 connected
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ota_ble_gatt_server/connected.png)
 disconnected
-![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ota_ble_gatt_server/disconnect.png)
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ota_ble_gatt_server/disconnected.png)
 
 # Conclusion & Supplement
 
