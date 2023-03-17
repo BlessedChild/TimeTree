@@ -63,7 +63,7 @@ The above is the origin of the abbreviation "BLE"
 
 6. Test: Firstly, Open chrome and enter about://bluetooth-internals, and then you should arrived the page below
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ota_ble_gatt_server/clickDevices.jpg)
-Secondely，you should click "devices" button left，next，click “Start Scan” button top-right
+Secondly，you should click "devices" button left，next，click “Start Scan” button top-right
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ota_ble_gatt_server/clickDevices_1.jpg)
 Thirdly, click “Inspect” button on the right in the option named “ESP_GATTS_DEMO”
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ota_ble_gatt_server/clickDevices_2.jpg)
