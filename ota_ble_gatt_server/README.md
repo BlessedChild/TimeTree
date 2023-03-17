@@ -71,9 +71,9 @@ Thirdly, click “Inspect” button on the right in the option named “ESP_GATT
 Finally, we can see the mac connect to the dev board, respone informations to mac on the page and outlog in the command line interface for the dev board
 ![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ota_ble_gatt_server/clickDevices_3.jpg)
 connected
-![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ota_ble_gatt_server/connected.jpg)
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ota_ble_gatt_server/connected.png)
 disconnected
-![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ota_ble_gatt_server/disconnect.jpg)
+![avatar](https://github.com/BlessedChild/TimeTree/blob/main/sources/ota_ble_gatt_server/disconnect.png)
 
 # Conclusion & Supplement
 
