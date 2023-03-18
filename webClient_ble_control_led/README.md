@@ -1,6 +1,6 @@
 # Introduction
 
-This is a demo for controling the duty of the led/rgb through the web of Chrome(Web Bluetooth)
+This is a demo for controling the duty of the led/rgb through the web of Chrome(Web bluetooth)
 
 # Key
 
@@ -37,7 +37,7 @@ case ESP_GATTS_DISCONNECT_EVT:
     break;
 ```
 
-key for BLE CONTROL, 
+key for BLE CONTROL, timer configuration and channel configuration.
 ``` c
 static void example_ledc_init(void)
 {
@@ -87,7 +87,10 @@ static void example_ledc_init(void)
     };
     ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel_2));
 }
+```
 
+key for BLE CONTROL, change PWM signal.
+``` c
 static void open_led(void)
 {
     // Set the LEDC peripheral configuration
@@ -97,12 +100,12 @@ static void open_led(void)
 
 static void close_led(void)
 {
-    // Set duty to 50%
-    ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL_0, 4095 * 2));
-    // Set duty to 50%
-    ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL_1, 4095 * 2));
-     // Set duty to 50%
-    ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL_2, 4095 * 2));
+    // Set duty to 100%
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL_0, LEDC_DUTY * 2));
+    // Set duty to 100%
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL_1, LEDC_DUTY * 2));
+     // Set duty to 100%
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL_2, LEDC_DUTY * 2));
     // Update duty to apply the new value
     ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL_0));
     // Update duty to apply the new value
