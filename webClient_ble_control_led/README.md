@@ -1,6 +1,6 @@
 # Introduction
 
-This is a demo for controling the duty of the led/rgb through the web of Chrome(Web bluetooth)
+This is a demo for controling the duty of the led/rgb through the web of Chrome(Web Bluetooth)
 
 # Key
 
