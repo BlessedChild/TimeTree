@@ -1,6 +1,6 @@
 # Introduction
 
-This is a solution for communicating dirctly with Bluetooth/WIFI components through the web interfaces.
+This is a solution that can directly communicate with the bluetooth module on the web side.
 
 # Development environment
 
